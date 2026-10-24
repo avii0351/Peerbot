@@ -1,0 +1,1211 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Peerbot — Physical AI Companion for Fastpeer</title>
+    <meta
+      name="description"
+      content="Peerbot: the voice-activated, desk-native AI companion for real estate professionals. Powered by Fastpeer master intelligence and Universal Hardware Connector."
+    />
+    <!-- Yatricare & Modern Clean Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./src/style.css" />
+  </head>
+  <body>
+    <!-- Top Scroll Progress Bar -->
+    <div class="progress" id="progress"></div>
+
+    <!-- Sticky Yatricare Nav -->
+    <header class="nav" id="top">
+      <div class="wrap nav-in">
+        <a href="#top" class="logo" id="brand-logo">
+          <div class="logo-mark">
+            <div class="logo-eyes">
+              <span class="logo-eye"></span>
+              <span class="logo-eye"></span>
+            </div>
+          </div>
+          <div class="logo-txt">
+            <span class="logo-word">Peerbot<sup>AI</sup></span>
+            <span class="logo-by">by <b>Fastpeer</b></span>
+          </div>
+        </a>
+
+        <ul class="nav-links">
+          <li><a href="#story">Realtor Story</a></li>
+          <li><a href="#hardware-3d">3D Teardown</a></li>
+          <li><a href="#architecture">Architecture</a></li>
+          <li><a href="#workflows">Workflows</a></li>
+          <li><a href="#live-console">Console</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ul>
+
+        <div class="nav-actions">
+          <button class="btn btn-royal btn-sm" id="btn-open-demo-modal">
+            <span>Reserve DevKit</span>
+            <svg viewBox="0 0 20 20" fill="currentColor">
+              <path fill-rule="evenodd" d="M3 10a.75.75 0 01.75-.75h10.638L10.23 5.29a.75.75 0 111.04-1.08l5.5 5.25a.75.75 0 010 1.08l-5.5 5.25a.75.75 0 11-1.04-1.08l4.158-3.96H3.75A.75.75 0 013 10z" clip-rule="evenodd" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <!-- Hero Section (Yatricare Editorial Style) -->
+      <section class="hero">
+        <div class="wrap hero-grid">
+          <div class="hero-copy">
+            <div class="hero-kicker">
+              <b>REALTOR COMPANION</b>
+              <span>Physical AI node for the Fastpeer ecosystem</span>
+            </div>
+
+            <h1>
+              <span class="line"><span>A faster, hands-free day</span></span>
+              <span class="line"><span>for every <em>realtor<svg viewBox="0 0 200 18"><path d="M2 14 Q 50 2 100 10 T 198 8"/></svg></em>.</span></span>
+            </h1>
+
+            <p class="hero-lead">
+              Speak client updates in your car, drop contracts in front of Peerbot on your desk, and let Fastpeer autonomously update your CRM, query MLS comps, and close deals.
+            </p>
+
+            <div class="hero-ctas">
+              <a href="#story" class="btn btn-royal" id="btn-hero-scroll">
+                <span>Explore Realtor Story</span>
+                <svg viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd" d="M10 3a.75.75 0 01.75.75v10.69l3.72-3.72a.75.75 0 111.06 1.06l-5 5a.75.75 0 01-1.06 0l-5-5a.75.75 0 111.06-1.06l3.72 3.72V3.75A.75.75 0 0110 3z" clip-rule="evenodd" />
+                </svg>
+              </a>
+              <a href="#hardware-3d" class="btn btn-marker">
+                <span>Inspect 3D Teardown</span>
+              </a>
+              <button class="btn btn-line" id="btn-hero-client-tour">
+                <span>🎬 Client Tour</span>
+              </button>
+            </div>
+
+            <!-- Yatricare 4-Column Stat Bar -->
+            <div class="hero-stats">
+              <div class="stat">
+                <strong>&lt; 1.2s</strong>
+                <span>Voice-to-CRM latency</span>
+              </div>
+              <div class="stat">
+                <strong>3.5 hrs</strong>
+                <span>Saved per agent/day</span>
+              </div>
+              <div class="stat">
+                <strong>100%</strong>
+                <span>Hands-free meetings</span>
+              </div>
+              <div class="stat">
+                <strong>24/7</strong>
+                <span>Autonomous closing</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Hero Visual Pedestal with Floating Badges -->
+          <div class="hero-visual">
+            <div class="pedestal"></div>
+            <div class="bag-hero">
+              <img
+                src="./images/peerbot-hero.jpg"
+                alt="Peerbot Physical AI Companion on Realtor Desk"
+                loading="eager"
+              />
+            </div>
+
+            <div class="chipf cf-a">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z" />
+                <path d="M19 10v2a7 7 0 0 1-14 0v-2" />
+                <line x1="12" x2="12" y1="19" y2="22" />
+              </svg>
+              <div>
+                <b>Ambient Voice Node</b>
+                <span>Far-field MEMS capture</span>
+              </div>
+            </div>
+
+            <div class="chipf cf-b">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="m18 15-6-6-6 6" />
+                <rect width="18" height="18" x="3" y="3" rx="2" />
+              </svg>
+              <div>
+                <b>Universal Connector</b>
+                <span>JSON over WebSocket bus</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Animated Data Highway Road Ribbon with Static Peerbot -->
+        <div class="road" aria-label="Peerbot Active Data Bus">
+          <div class="road-peerbot-static" id="road-peerbot" title="Peerbot Ambient AI Node">
+            <svg viewBox="0 0 84 72" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="pbBodyGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                  <stop offset="0%" stop-color="#FFFFFF" />
+                  <stop offset="60%" stop-color="#F5F2EB" />
+                  <stop offset="100%" stop-color="#E2DED4" />
+                </linearGradient>
+                <linearGradient id="pbVisorGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#161B22" />
+                  <stop offset="100%" stop-color="#0C0F14" />
+                </linearGradient>
+                <linearGradient id="pbRingGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#E6E2D8" />
+                  <stop offset="100%" stop-color="#C8C4B8" />
+                </linearGradient>
+                <filter id="pbGlow" x="-30%" y="-30%" width="160%" height="160%">
+                  <feGaussianBlur stdDeviation="1.5" result="blur" />
+                  <feComposite in="SourceGraphic" in2="blur" operator="over" />
+                </filter>
+              </defs>
+
+              <!-- Base shadow -->
+              <ellipse cx="42" cy="69" rx="28" ry="3" fill="rgba(22, 24, 29, 0.2)" />
+
+              <!-- Base rubber ring -->
+              <ellipse cx="42" cy="67" rx="22" ry="2.2" fill="#2B2F38" />
+
+              <!-- Main body shell -->
+              <path d="M 18 40 C 18 15, 27 7, 42 7 C 57 7, 66 15, 66 40 C 66 58, 60 66, 42 66 C 24 66, 18 58, 18 40 Z" fill="url(#pbBodyGrad)" stroke="#D8D4C8" stroke-width="1.2" />
+
+              <!-- Dual microphone pinholes -->
+              <circle cx="39" cy="10" r="0.8" fill="#8C887E" />
+              <circle cx="45" cy="10" r="0.8" fill="#8C887E" />
+
+              <!-- Glossy black visor screen -->
+              <rect x="23" y="19" width="38" height="22" rx="11" fill="url(#pbVisorGrad)" stroke="#222A36" stroke-width="1" />
+
+              <!-- Camera sensor / status indicator -->
+              <circle cx="42" cy="22.5" r="1.1" fill="#1C232D" stroke="#00E5F5" stroke-width="0.5" />
+
+              <!-- Emotive Blinking Eyes -->
+              <!-- Left Eye -->
+              <g class="road-pb-eye road-pb-eye-left" style="transform-origin: 32px 30px;">
+                <circle cx="32" cy="30" r="4.8" fill="none" stroke="#00E5F5" stroke-width="2.2" filter="url(#pbGlow)" />
+                <circle cx="32.8" cy="29.2" r="1.5" fill="#FFFFFF" />
+              </g>
+
+              <!-- Right Eye -->
+              <g class="road-pb-eye road-pb-eye-right" style="transform-origin: 52px 30px;">
+                <circle cx="52" cy="30" r="4.8" fill="none" stroke="#00E5F5" stroke-width="2.2" filter="url(#pbGlow)" />
+                <circle cx="52.8" cy="29.2" r="1.5" fill="#FFFFFF" />
+              </g>
+
+              <!-- Capacitive button on chest -->
+              <circle cx="42" cy="53" r="4.2" fill="url(#pbRingGrad)" stroke="#CEC9BC" stroke-width="0.8" />
+              <circle cx="42" cy="53" r="3" fill="#FAF8F2" />
+              <circle cx="42" cy="53" r="1.2" fill="#00E5F5" opacity="0.9" />
+            </svg>
+          </div>
+        </div>
+
+        <!-- Marquee Ticker -->
+        <div class="marquee">
+          <div class="marquee-track">
+            <span>Fastpeer Master Intelligence</span>
+            <span>Real Estate CRM Sync in 1.2s</span>
+            <span>Multimodal Document Vision</span>
+            <span>Zero Screen Distraction in Client Meetings</span>
+            <span>Autonomous Gmail & Drive MCP Workflows</span>
+            <span>Universal Hardware Connector</span>
+            <span>Fastpeer Master Intelligence</span>
+            <span>Real Estate CRM Sync in 1.2s</span>
+            <span>Multimodal Document Vision</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- CHAPTER 01: Morning Commute & Voice Notes -->
+      <section class="story-section" id="story">
+        <div class="wrap j-grid">
+          <div class="j-copy">
+            <span class="eyebrow">Chapter 01 · 08:30 AM On The Road</span>
+            <h2>Speak your thoughts. Never open your CRM manually again.</h2>
+            <p>
+              Top realtors spend 2+ hours daily entering notes after property showings. With Peerbot, talk naturally during your drive — the agent parses the client's budget, lease terms, and family preferences automatically.
+            </p>
+
+            <div class="story-pillars">
+              <div class="pillar">
+                <div class="ic">🎙️</div>
+                <div>
+                  <h3>Natural Voice Intake</h3>
+                  <p>Far-field MEMS microphone captures raw audio without awake words or phone handling.</p>
+                </div>
+              </div>
+
+              <div class="pillar">
+                <div class="ic">🧠</div>
+                <div>
+                  <h3>Fastpeer LLM Extraction</h3>
+                  <p>Master agent extracts buyer budget, bedrooms, school districts, and timeline in milliseconds.</p>
+                </div>
+              </div>
+
+              <div class="pillar wide">
+                <div class="ic">📁</div>
+                <div>
+                  <h3>Direct CRM Sync <span class="new-tag">MCP</span></h3>
+                  <p>Updates buyer records in Fastpeer CRM and Google Drive before you arrive at your desk.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Interactive Voice Art Card -->
+          <div class="story-art-panel">
+            <div class="art-badge-row">
+              <span class="art-live-tag">
+                <span class="art-live-dot"></span> LIVE VOICE INTAKE
+              </span>
+              <span class="spatial-coord">Bus: WSS // 48kHz</span>
+            </div>
+
+            <div class="voice-wave-box">
+              <div class="wave-bars">
+                <span class="wave-bar"></span>
+                <span class="wave-bar"></span>
+                <span class="wave-bar"></span>
+                <span class="wave-bar"></span>
+                <span class="wave-bar"></span>
+                <span class="wave-bar"></span>
+                <span class="wave-bar"></span>
+                <span class="wave-bar"></span>
+              </div>
+              <div class="voice-transcript">
+                "Take a note: Johnson wants a 4-bed pool home in Maplewood under $1.4M with closing by August."
+              </div>
+            </div>
+
+            <div class="art-mini-stats">
+              <div>
+                <b>1.2s</b>
+                <span>Extraction Speed</span>
+              </div>
+              <div>
+                <b>99.4%</b>
+                <span>Field Accuracy</span>
+              </div>
+              <div>
+                <b>0 min</b>
+                <span>Typing Required</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CHAPTER 02: On The Desk · Multimodal Document Vision -->
+      <section class="story-section alt-bg">
+        <div class="wrap j-grid">
+          <!-- Interactive Camera Viewfinder Card on Left -->
+          <div class="story-art-panel">
+            <div class="art-badge-row">
+              <span class="art-live-tag">
+                <span class="art-live-dot"></span> DESK VISION ACTIVE
+              </span>
+              <span class="spatial-coord">OV2640 · 640×480 MJPEG</span>
+            </div>
+
+            <div class="camera-viewport" style="height: 220px;">
+              <div class="camera-hud-box box-1" style="width: 170px; height: 130px;">
+                <span class="hud-tag">Client: Buyer (Confidence: 98.4%)</span>
+              </div>
+              <div class="camera-hud-box box-2" style="width: 180px; height: 100px;">
+                <span class="hud-tag">Lease Agreement Document</span>
+              </div>
+              <div class="camera-overlay-info">
+                <span>Desk Distance: 42cm · Ambient Vision Filter · 30 FPS</span>
+              </div>
+            </div>
+
+            <div class="art-mini-stats">
+              <div>
+                <b>Instant</b>
+                <span>MLS Comps</span>
+              </div>
+              <div>
+                <b>128×64</b>
+                <span>Eye Feedback</span>
+              </div>
+              <div>
+                <b>Tamper-Free</b>
+                <span>OCR Validation</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="j-copy">
+            <span class="eyebrow">Chapter 02 · 11:15 AM Client Consultation</span>
+            <h2>Drop blueprints or contracts right in front of Peerbot.</h2>
+            <p>
+              In client meetings, looking down at a laptop screen kills trust. Peerbot sits subtly on your desk. Point to a floor plan or agreement — its camera scans the page, retrieves comps, and answers questions out loud.
+            </p>
+
+            <div class="story-pillars">
+              <div class="pillar">
+                <div class="ic">👁️</div>
+                <div>
+                  <h3>Multimodal Desk Vision</h3>
+                  <p>Wide-angle lens identifies contracts, floor plans, and client presence effortlessly.</p>
+                </div>
+              </div>
+
+              <div class="pillar">
+                <div class="ic">🏡</div>
+                <div>
+                  <h3>Live MLS & CMA Comps</h3>
+                  <p>Master agent queries active local listings and neighborhood valuations in real time.</p>
+                </div>
+              </div>
+
+              <div class="pillar wide">
+                <div class="ic">✨</div>
+                <div>
+                  <h3>Non-Intrusive Emotive Visor</h3>
+                  <p>SH1106 OLED eyes smile and nod, reassuring your clients without distracting screens.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CHAPTER 03: Autonomous Closing · Digital & Physical Actuation -->
+      <section class="story-section">
+        <div class="wrap j-grid">
+          <div class="j-copy">
+            <span class="eyebrow">Chapter 03 · 04:45 PM Closing The Deal</span>
+            <h2>While you negotiate on the call, the agent closes the loop.</h2>
+            <p>
+              Closing a deal involves 10 tedious steps: downloading signed PDFs, updating escrow files, sending confirmations, and stamping paper folders. Peerbot coordinates both digital MCP tools and physical desk actuators.
+            </p>
+
+            <div class="story-pillars">
+              <div class="pillar">
+                <div class="ic">📬</div>
+                <div>
+                  <h3>Gmail & Drive MCP</h3>
+                  <p>Inbound purchase agreements trigger autonomous folder creation and escrow sync.</p>
+                </div>
+              </div>
+
+              <div class="pillar">
+                <div class="ic">🦾</div>
+                <div>
+                  <h3>Physical Limbs Actuation</h3>
+                  <p>Universal Connector commands desk robotic arms to stamp and file paperwork.</p>
+                </div>
+              </div>
+
+              <div class="pillar wide">
+                <div class="ic">🔊</div>
+                <div>
+                  <h3>High-Fidelity Audio Alert</h3>
+                  <p>Class-D I2S speaker announces completion: <em>"Signed offer received, stamped, and filed."</em></p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Interactive Event Loop Art Card -->
+          <div class="story-art-panel">
+            <div class="art-badge-row">
+              <span class="art-live-tag">
+                <span class="art-live-dot"></span> MCP AUTONOMOUS LOOP
+              </span>
+              <span class="spatial-coord">Protocol: MCP 1.0</span>
+            </div>
+
+            <div class="wf-json-card" style="margin-bottom: 0;">
+              <div class="json-header">
+                <span>Autonomous Event Dispatch</span>
+                <span class="json-live-badge">SUCCESS</span>
+              </div>
+              <pre class="json-code-block" style="font-size: 0.8rem;"><code>{
+  "source": "mcp:gmail",
+  "trigger": "signed_offer_received",
+  "client": "Johnson Family",
+  "escrow_file": "742_maplewood_offer_signed.pdf",
+  "actuator_action": {
+    "target": "robotic_arm_01",
+    "command": "stamp_contract_received"
+  },
+  "peerbot_spoken_alert": "Offer filed and stamped."
+}</code></pre>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CHAPTER 04: Naked 3D Prototype Teardown -->
+      <section class="naked-3d-section" id="hardware-3d">
+        <div class="wrap">
+          <div class="teardown-header">
+            <div class="sec-head" style="margin-bottom: 0;">
+              <span class="eyebrow">Chapter 04 · Engineering Teardown</span>
+              <h2>Inside the naked prototype.</h2>
+              <p>
+                Inspect the Seeed XIAO ESP32-S3 Sense mainboard, I2C OLED display, OV2640 camera bus, I2S amplifier, and capacitive touch harness in full 360°.
+              </p>
+            </div>
+
+            <!-- Turntable Inspection Toolbar -->
+            <div class="turntable-toolbar">
+              <button class="btn btn-line btn-sm" id="btn-toggle-rotate">
+                <span id="rotate-label">Pause 360°</span>
+              </button>
+              <button class="btn btn-line btn-sm" id="btn-reset-view">
+                <span>Reset Angle</span>
+              </button>
+              <button class="btn btn-line btn-sm" id="btn-toggle-wireframe">
+                <span>X-Ray</span>
+              </button>
+              <button class="btn btn-line btn-sm" id="btn-cycle-face">
+                <span>Mood: <b id="current-face-label">Normal</b></span>
+              </button>
+            </div>
+          </div>
+
+          <!-- 3D Canvas Viewport with Symmetrical Floating HUD Badges -->
+          <div class="naked-canvas-container">
+            <div id="peerbot-3d-container" class="threejs-canvas"></div>
+
+            <div class="hardware-specs-badges">
+              <div class="hw-badge hw-badge-top-left spatial-card" data-spatial-tilt>
+                <div class="hw-badge-header">
+                  <span class="hw-label">Vision Sensor</span>
+                  <span class="spatial-coord">Z: +28mm</span>
+                </div>
+                <strong>OV2640 Camera</strong>
+                <p>640×480 MJPEG video streaming via DVP parallel bus</p>
+                <div class="spatial-pin-line"></div>
+              </div>
+
+              <div class="hw-badge hw-badge-mid-left spatial-card" data-spatial-tilt>
+                <div class="hw-badge-header">
+                  <span class="hw-label">Display Node</span>
+                  <span class="spatial-coord">Z: +34mm</span>
+                </div>
+                <strong>1.3" SH1106 OLED</strong>
+                <p>128×64 matrix with I2C bus & hardware emotive eyes</p>
+                <div class="spatial-pin-line"></div>
+              </div>
+
+              <div class="hw-badge hw-badge-top-right spatial-card" data-spatial-tilt>
+                <div class="hw-badge-header">
+                  <span class="hw-label">SoC Mainboard</span>
+                  <span class="spatial-coord">Z: 00mm</span>
+                </div>
+                <strong>Seeed XIAO ESP32-S3</strong>
+                <p>Dual-core 240MHz, OPI PSRAM & Wi-Fi 4 stack</p>
+                <div class="spatial-pin-line"></div>
+              </div>
+
+              <div class="hw-badge hw-badge-mid-right spatial-card" data-spatial-tilt>
+                <div class="hw-badge-header">
+                  <span class="hw-label">Audio Output</span>
+                  <span class="spatial-coord">Z: -12mm</span>
+                </div>
+                <strong>MAX98357A I2S Amp</strong>
+                <p>Class-D amplifier driving low-latency streaming TTS</p>
+                <div class="spatial-pin-line"></div>
+              </div>
+
+              <div class="hw-badge hw-badge-bottom spatial-card" data-spatial-tilt>
+                <div class="hw-badge-header">
+                  <span class="hw-label">Physical Input</span>
+                  <span class="spatial-coord">Z: +38mm</span>
+                </div>
+                <strong>Capacitive Pad (GPIO 2)</strong>
+                <p>Push-to-talk wake interrupt with copper trace wiring</p>
+                <div class="spatial-pin-line"></div>
+              </div>
+            </div>
+
+            <div class="canvas-drag-hint">
+              <span>Drag to rotate 360° · Double-click to reset</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CHAPTER 05: Decoupled Architecture (Brain vs Limbs) -->
+      <section class="story-section alt-bg" id="architecture">
+        <div class="wrap">
+          <div class="sec-head" style="text-align: center; margin-inline: auto;">
+            <span class="eyebrow" style="justify-content: center;">Chapter 05 · Decoupled Architecture</span>
+            <h2>Brain vs Limbs: Why Peerbot never gets obsolete.</h2>
+            <p style="margin-inline: auto;">
+              Central intelligence, context memory, and MCP integrations execute on Fastpeer. Physical devices remain modular sensory endpoints that require zero firmware rewrites as new AI models emerge.
+            </p>
+          </div>
+
+          <!-- 4-Layer Architecture Stack -->
+          <div class="arch-stack-container">
+            <div class="arch-layer-card" data-layer="4">
+              <div class="layer-number">Layer 04</div>
+              <div class="layer-info">
+                <h3>Physical Limbs (Hardware Endpoints)</h3>
+                <p>Peerbot (voice, screen, camera), robotic arm (document handling), and vendor actuators. Peripheral nodes that sense and actuate without direct peer-to-peer coupling.</p>
+              </div>
+              <div class="layer-tags">
+                <span class="tech-tag">Peerbot</span>
+                <span class="tech-tag">Robotic Arm</span>
+                <span class="tech-tag">Actuators</span>
+              </div>
+            </div>
+
+            <div class="arch-connector-arrow">
+              <span>↕ Universal Hardware Connector (JSON over WebSocket)</span>
+            </div>
+
+            <div class="arch-layer-card highlight-layer" data-layer="3">
+              <div class="layer-number">Layer 03</div>
+              <div class="layer-info">
+                <h3>Universal Hardware Connector</h3>
+                <p>Single shared event bus. Devices declare capabilities on boot (<code class="code-inline">["audio_stream", "move_xyz"]</code>); Fastpeer dispatches structured task payloads.</p>
+              </div>
+              <div class="layer-tags">
+                <span class="tech-tag">Event Bus</span>
+                <span class="tech-tag">Low Latency</span>
+                <span class="tech-tag">Typed Schemas</span>
+              </div>
+            </div>
+
+            <div class="arch-connector-arrow">
+              <span>↕ Master Agent Orchestration</span>
+            </div>
+
+            <div class="arch-layer-card" data-layer="2">
+              <div class="layer-number">Layer 02</div>
+              <div class="layer-info">
+                <h3>Fastpeer Brain & Master Agent</h3>
+                <p>Central intelligence maintaining realtor CRM records, CMA reports, contextual memory, LLM orchestration, and workflow state machines.</p>
+              </div>
+              <div class="layer-tags">
+                <span class="tech-tag">LLM Engine</span>
+                <span class="tech-tag">Context Memory</span>
+                <span class="tech-tag">State Machine</span>
+              </div>
+            </div>
+
+            <div class="arch-connector-arrow">
+              <span>↕ Model Context Protocol (MCP)</span>
+            </div>
+
+            <div class="arch-layer-card" data-layer="1">
+              <div class="layer-number">Layer 01</div>
+              <div class="layer-info">
+                <h3>Digital Services (MCP Connectors)</h3>
+                <p>Gmail MCP, Google Drive MCP, CRM MCP. Secure bridge allowing Fastpeer to query files, monitor correspondence, and sync records.</p>
+              </div>
+              <div class="layer-tags">
+                <span class="tech-tag">Gmail MCP</span>
+                <span class="tech-tag">Drive MCP</span>
+                <span class="tech-tag">CRM Database</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CHAPTER 06: Workflow Simulator -->
+      <section class="story-section" id="workflows">
+        <div class="wrap">
+          <div class="sec-head" style="text-align: center; margin-inline: auto;">
+            <span class="eyebrow" style="justify-content: center;">Chapter 06 · Runtime Pipeline</span>
+            <h2>Watch production realtor workflows execute.</h2>
+            <p style="margin-inline: auto;">
+              Click through three real scenarios from the architecture specification to trace live packet movement.
+            </p>
+          </div>
+
+          <div style="display: flex; justify-content: center; margin-bottom: 24px;">
+            <div class="workflow-tabs" role="tablist">
+              <button class="workflow-tab active" data-wf="1" id="tab-wf-1">
+                <span class="wf-num">01</span>
+                <span>Voice Note</span>
+              </button>
+              <button class="workflow-tab" data-wf="2" id="tab-wf-2">
+                <span class="wf-num">02</span>
+                <span>Property Query</span>
+              </button>
+              <button class="workflow-tab" data-wf="3" id="tab-wf-3">
+                <span class="wf-num">03</span>
+                <span>Autonomous MCP Loop</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="workflow-display-box" id="workflow-display-box">
+            <div class="wf-display-top">
+              <div class="wf-scenario-badge">
+                <span class="pill-dot"></span>
+                <span id="wf-scenario-title">Scenario 1: Taking a Voice Note</span>
+              </div>
+              <button class="btn btn-royal btn-sm" id="btn-run-workflow">
+                Run Sequence
+              </button>
+            </div>
+
+            <!-- Pipeline Diagram -->
+            <div class="wf-pipeline">
+              <div class="wf-node" id="node-client">
+                <div class="node-icon">👤</div>
+                <div class="node-name">Client / User</div>
+                <div class="node-sub">Natural Voice</div>
+              </div>
+
+              <div class="wf-arrow" id="arrow-1">
+                <span class="arrow-packet" id="packet-1"></span>
+                <span class="arrow-line"></span>
+              </div>
+
+              <div class="wf-node" id="node-peerbot">
+                <div class="node-icon">🤖</div>
+                <div class="node-name">Peerbot</div>
+                <div class="node-sub">Audio & Display</div>
+              </div>
+
+              <div class="wf-arrow" id="arrow-2">
+                <span class="arrow-packet" id="packet-2"></span>
+                <span class="arrow-line"></span>
+              </div>
+
+              <div class="wf-node" id="node-fastpeer">
+                <div class="node-icon">🧠</div>
+                <div class="node-name">Fastpeer Brain</div>
+                <div class="node-sub">Master Agent</div>
+              </div>
+
+              <div class="wf-arrow" id="arrow-3">
+                <span class="arrow-packet" id="packet-3"></span>
+                <span class="arrow-line"></span>
+              </div>
+
+              <div class="wf-node" id="node-target">
+                <div class="node-icon">📁</div>
+                <div class="node-name" id="node-target-name">CRM Storage</div>
+                <div class="node-sub" id="node-target-sub">MCP Connector</div>
+              </div>
+            </div>
+
+            <!-- Steps & Telemetry -->
+            <div class="wf-steps-grid">
+              <div class="wf-narrative-card">
+                <h4 class="card-heading">Execution Steps</h4>
+                <ol class="step-list" id="wf-step-list">
+                  <li class="active-step">
+                    <span class="step-badge">1</span>
+                    <div>
+                      <strong>Client speaks:</strong>
+                      <p>"Take a note about the new property lease terms."</p>
+                    </div>
+                  </li>
+                  <li>
+                    <span class="step-badge">2</span>
+                    <div>
+                      <strong>Peerbot streams audio:</strong>
+                      <p>MEMS microphone sends audio packet over WebSocket bus.</p>
+                    </div>
+                  </li>
+                  <li>
+                    <span class="step-badge">3</span>
+                    <div>
+                      <strong>Fastpeer transcribes + extracts intent:</strong>
+                      <p>LLM identifies client context, dates, and lease clause details.</p>
+                    </div>
+                  </li>
+                  <li>
+                    <span class="step-badge">4</span>
+                    <div>
+                      <strong>Saves note to CRM:</strong>
+                      <p>File updated in client record via MCP connector.</p>
+                    </div>
+                  </li>
+                  <li>
+                    <span class="step-badge">5</span>
+                    <div>
+                      <strong>Fastpeer dispatches TTS payload:</strong>
+                      <p>JSON speech payload sent back down the event bus.</p>
+                    </div>
+                  </li>
+                  <li>
+                    <span class="step-badge">6</span>
+                    <div>
+                      <strong>Peerbot announces:</strong>
+                      <p>"Note saved to your Fastpeer account." (Eyes smile)</p>
+                    </div>
+                  </li>
+                </ol>
+              </div>
+
+              <div class="wf-json-card">
+                <div class="json-header">
+                  <span>WebSocket Frame Telemetry</span>
+                  <span class="json-live-badge">BUS CONNECTED</span>
+                </div>
+                <pre class="json-code-block" id="wf-json-preview"><code>{
+  "event": "audio_stream_chunk",
+  "device_id": "peerbot_desk_01",
+  "timestamp": 1729784200,
+  "payload": {
+    "intent": "crm.take_note",
+    "transcript": "Take a note about the new property lease",
+    "status": "transcribed"
+  }
+}</code></pre>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CHAPTER 07: Live Console Simulator -->
+      <section class="story-section alt-bg" id="live-console">
+        <div class="wrap">
+          <div class="sec-head" style="text-align: center; margin-inline: auto;">
+            <span class="eyebrow" style="justify-content: center;">Chapter 07 · Interactive Test Bench</span>
+            <h2>Test the device directly from your browser.</h2>
+            <p style="margin-inline: auto;">
+              Trigger capacitive touch events, send simulated voice queries, and monitor real-time WebSocket telemetry.
+            </p>
+          </div>
+
+          <div class="console-layout">
+            <!-- Simulated Hardware Widget -->
+            <div class="console-device-card">
+              <div class="device-visor-simulator">
+                <div class="camera-lens-dot"></div>
+                <div class="sim-oled" id="sim-oled-screen">
+                  <div class="sim-eye left" id="sim-eye-left">
+                    <span class="pupil"></span>
+                  </div>
+                  <div class="sim-eye right" id="sim-eye-right">
+                    <span class="pupil"></span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="device-body-simulator">
+                <button class="sim-touch-button" id="sim-touch-btn" title="Tap to wake / talk (GPIO 2)">
+                  <span class="touch-ring"></span>
+                  <span class="touch-label">PUSH-TO-TALK (GPIO 2)</span>
+                </button>
+
+                <div class="sim-speaker-mesh">
+                  <div class="mesh-label">I2S ACOUSTIC OUTPUT</div>
+                </div>
+              </div>
+
+              <div class="sim-quick-prompts">
+                <span class="prompts-title">Sample Voice Prompts:</span>
+                <div class="prompts-grid">
+                  <button class="prompt-pill" data-prompt="Take a note about the property lease">
+                    "Take a note about property lease"
+                  </button>
+                  <button class="prompt-pill" data-prompt="Anything new near this area?">
+                    "Anything new near this area?"
+                  </button>
+                  <button class="prompt-pill" data-prompt="What do I have on file for this property?">
+                    "What do I have on file for this property?"
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Dialogue & Telemetry Feed -->
+            <div class="console-io-card">
+              <div class="camera-preview-panel">
+                <div class="camera-header">
+                  <div class="cam-indicator"><span class="cam-dot"></span> OV2640 CAMERA FEED (640×480 MJPEG)</div>
+                  <button class="cam-btn" id="btn-toggle-cam">Toggle Vision HUD</button>
+                </div>
+                <div class="camera-viewport" id="cam-viewport">
+                  <div class="camera-hud-box box-1">
+                    <span class="hud-tag">Client: Realtor (Confidence: 98.4%)</span>
+                  </div>
+                  <div class="camera-hud-box box-2">
+                    <span class="hud-tag">Lease Agreement Document</span>
+                  </div>
+                  <div class="camera-overlay-info">
+                    <span>ESP32-S3 Sense · Liquid Glass Filter · 30 FPS</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="conversation-transcript-box">
+                <div class="dialogue-item user-msg">
+                  <span class="speaker-tag">User Voice</span>
+                  <p id="sim-user-text">Tap the touch button or select a prompt...</p>
+                </div>
+
+                <div class="dialogue-item peerbot-msg">
+                  <span class="speaker-tag">Peerbot (Fastpeer Voice)</span>
+                  <p id="sim-peerbot-text">"Ready to assist with your listings, notes, and clients."</p>
+                </div>
+              </div>
+
+              <div class="ws-stream-box">
+                <div class="ws-stream-title">
+                  <span>WebSocket Packet Stream (<code class="code-inline">ws://fastpeer.local/bus</code>)</span>
+                  <span class="status-badge-green">Connected</span>
+                </div>
+                <div class="ws-stream-content" id="ws-packet-log">
+                  <div class="ws-line in">[16:20:01] &lt;&lt; {"event":"hello","device":"peerbot","firmware":"v1.2.0"}</div>
+                  <div class="ws-line out">[16:20:02] &gt;&gt; {"capabilities":["audio_stream","camera_mjpeg","display_oled","touch_gpio2"]}</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CHAPTER 08: Realtor Results & ROI Bento -->
+      <section class="story-section" id="roi">
+        <div class="wrap">
+          <div class="sec-head" style="text-align: center; margin-inline: auto;">
+            <span class="eyebrow" style="justify-content: center;">Chapter 08 · Measurable Impact</span>
+            <h2>The numbers that matter for high-volume brokerages.</h2>
+            <p style="margin-inline: auto;">
+              Proven time-savings across commercial and luxury residential real estate teams.
+            </p>
+          </div>
+
+          <div class="roi-grid">
+            <div class="roi-card">
+              <strong>3.5 hrs</strong>
+              <h3>Daily Time Saved</h3>
+              <p>Realtors eliminate manual CRM data entry, comp searches, and follow-up email drafts.</p>
+            </div>
+
+            <div class="roi-card">
+              <strong>&lt; 1.2s</strong>
+              <h3>Instant Query Comps</h3>
+              <p>Master agent processes questions and calculates market statistics on demand.</p>
+            </div>
+
+            <div class="roi-card">
+              <strong>0 mins</strong>
+              <h3>Typing in Client Meetings</h3>
+              <p>Maintain full eye contact with clients while Peerbot logs key takeaways ambiently.</p>
+            </div>
+
+            <div class="roi-card">
+              <strong>100%</strong>
+              <h3>Decoupled Longevity</h3>
+              <p>As LLMs improve, your hardware remains valid — all brain updates happen in cloud.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CHAPTER 09: Yatricare Accordion FAQ -->
+      <section class="story-section alt-bg" id="faq">
+        <div class="wrap faq-wrap">
+          <div class="sec-head" style="margin-bottom: 0;">
+            <span class="eyebrow">Frequently Asked Questions</span>
+            <h2>Everything you need to know about Peerbot.</h2>
+            <p>
+              Got questions about hardware setup, Fastpeer integration, or privacy? Check our quick answers or chat with Peerbot directly.
+            </p>
+          </div>
+
+          <div class="faq">
+            <div class="qa open">
+              <button type="button" aria-expanded="true">
+                <span>How does Peerbot connect to my real estate CRM?</span>
+                <span class="pm">+</span>
+              </button>
+              <div class="ans">
+                <div>
+                  <p>
+                    Peerbot communicates via the Universal Hardware Connector over WebSockets to the Fastpeer cloud. Fastpeer connects to your CRM (HubSpot, Salesforce, Follow Up Boss, or native Fastpeer) through Model Context Protocol (MCP) integrations.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="qa">
+              <button type="button" aria-expanded="false">
+                <span>Is client audio recorded or shared with third parties?</span>
+                <span class="pm">+</span>
+              </button>
+              <div class="ans">
+                <div>
+                  <p>
+                    No. Raw audio streams are processed ephemerally in transit for transcription and intent extraction. No raw recordings are stored. Everything remains secured within your dedicated brokerage Fastpeer tenant.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="qa">
+              <button type="button" aria-expanded="false">
+                <span>Can I connect other hardware like robotic arms or lamps?</span>
+                <span class="pm">+</span>
+              </button>
+              <div class="ans">
+                <div>
+                  <p>
+                    Yes! That is the core superpower of our Decoupled Brain vs Limbs architecture. Any ESP32, Raspberry Pi, or robotic arm declaring its capabilities (<code class="code-inline">move_xyz</code>, <code class="code-inline">stamp</code>) joins the same event bus seamlessly.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="qa">
+              <button type="button" aria-expanded="false">
+                <span>What is included in the Developer Kit?</span>
+                <span class="pm">+</span>
+              </button>
+              <div class="ans">
+                <div>
+                  <p>
+                    The DevKit includes a Seeed Studio XIAO ESP32-S3 Sense board, pre-flashed firmware, smoked transparent acrylic desk stand, SH1106 OLED visor, MAX98357A audio amp, 3D printing CAD files, and Fastpeer MCP server bridge credentials.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CHAPTER 10: Yatricare Reservation / Contact Split Section -->
+      <section class="story-section" id="contact">
+        <div class="wrap contact-grid">
+          <div class="contact-card">
+            <span class="eyebrow">Direct Contact & Consultation</span>
+            <h2>Ready to transform your brokerage workflow?</h2>
+            <p>
+              Connect with our hardware engineering and Fastpeer automation team for custom brokerage deployments and volume DevKit orders.
+            </p>
+
+            <div class="cline">
+              <div class="ci">📞</div>
+              <div>
+                <b>+1 (800) 555-PEER</b>
+                <small>Hardware engineering hotline</small>
+              </div>
+            </div>
+
+            <div class="cline">
+              <div class="ci">✉️</div>
+              <div>
+                <b>devkit@fastpeer.ai</b>
+                <small>Direct DevKit reservations</small>
+              </div>
+            </div>
+
+            <div class="cline">
+              <div class="ci">📍</div>
+              <div>
+                <b>Fastpeer Labs · Austin, TX</b>
+                <small>Hardware prototyping facility</small>
+              </div>
+            </div>
+          </div>
+
+          <!-- Yatricare Form -->
+          <form class="quote" id="contact-quote-form">
+            <div class="field">
+              <label for="contact-name">Your Full Name</label>
+              <input type="text" id="contact-name" required placeholder="Alex Rivera" />
+            </div>
+
+            <div class="field">
+              <label for="contact-phone">Phone Number</label>
+              <input type="tel" id="contact-phone" required placeholder="+1 (555) 019-2834" />
+            </div>
+
+            <div class="field">
+              <label for="contact-email">Work Email</label>
+              <input type="email" id="contact-email" required placeholder="alex@brokerage.com" />
+            </div>
+
+            <div class="field">
+              <label for="contact-role">Role / Organization</label>
+              <select id="contact-role">
+                <option value="brokerage">Real Estate Brokerage / Team</option>
+                <option value="independent">Independent Top Producer</option>
+                <option value="developer">Hardware / IoT Integrator</option>
+                <option value="enterprise">Commercial Asset Management</option>
+              </select>
+            </div>
+
+            <div class="field full">
+              <label for="contact-notes">Workflow Requirements or Questions</label>
+              <textarea id="contact-notes" rows="3" placeholder="Tell us about your team size, CRM tools, or specific desk automation goals..."></textarea>
+            </div>
+
+            <div class="form-out">
+              <button type="submit" class="btn btn-royal">
+                <span>Request Consultation & DevKit</span>
+                <svg viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd" d="M3 10a.75.75 0 01.75-.75h10.638L10.23 5.29a.75.75 0 111.04-1.08l5.5 5.25a.75.75 0 010 1.08l-5.5 5.25a.75.75 0 11-1.04-1.08l4.158-3.96H3.75A.75.75 0 013 10z" clip-rule="evenodd" />
+                </svg>
+              </button>
+            </div>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <!-- Minimalist Dark Footer -->
+    <footer class="site-footer">
+      <div class="wrap foot">
+        <div>
+          <div class="logo-txt" style="margin-bottom: 12px;">
+            <span class="logo-word" style="font-size: 1.6rem;">Peerbot<sup>AI</sup></span>
+            <span class="logo-by">by <b>Fastpeer</b></span>
+          </div>
+          <p style="font-size: 0.92rem; line-height: 1.6; max-width: 38ch; margin-bottom: 18px;">
+            Physical AI companion built for the Fastpeer ecosystem. Decoupled Brain & Limbs architecture with Universal Hardware Connector.
+          </p>
+          <div class="foot-status-pill">
+            <span class="art-live-dot"></span>
+            <span>Universal Hardware Connector: Online</span>
+          </div>
+        </div>
+
+        <div>
+          <h4>Story & Hardware</h4>
+          <ul>
+            <li><a href="#story">Realtor Day in Life</a></li>
+            <li><a href="#hardware-3d">Naked 3D Prototype</a></li>
+            <li><a href="#architecture">Decoupled Brain Architecture</a></li>
+            <li><a href="#workflows">Runtime Pipeline</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4>Ecosystem & Connectors</h4>
+          <ul>
+            <li><a href="#live-console">Interactive Console</a></li>
+            <li><a href="#roi">Brokerage ROI</a></li>
+            <li><a href="#faq">Frequently Asked Questions</a></li>
+            <li><a href="#contact">Consultation & DevKit</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="wrap foot-bottom">
+        <p>© 2026 Fastpeer & Peerbot Systems. All rights reserved.</p>
+        <p>Built for Seeed XIAO ESP32-S3 Sense · Model Context Protocol Compliant</p>
+      </div>
+    </footer>
+
+    <!-- DevKit Reservation Modal -->
+    <div class="modal-backdrop" id="demo-modal" aria-hidden="true">
+      <div class="modal-dialog" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+        <button class="modal-close-btn" id="modal-close" aria-label="Close modal">&times;</button>
+        <span class="eyebrow" style="margin-bottom: 8px;">Fastpeer DevKit</span>
+        <h3 id="modal-title" class="modal-heading" style="font-size: 1.4rem; font-weight: 800; margin-bottom: 6px;">Reserve Peerbot Developer Kit</h3>
+        <p class="modal-text" style="color: var(--muted); font-size: 0.92rem; margin-bottom: 18px;">
+          Access firmware source, 3D enclosure CAD files, and Fastpeer MCP server bridge.
+        </p>
+
+        <form id="reservation-form" class="modal-form">
+          <div class="field" style="margin-bottom: 12px;">
+            <label for="input-name">Name</label>
+            <input type="text" id="input-name" required placeholder="Alex Rivera" />
+          </div>
+
+          <div class="field" style="margin-bottom: 12px;">
+            <label for="input-email">Email</label>
+            <input type="email" id="input-email" required placeholder="alex@brokerage.com" />
+          </div>
+
+          <div class="field" style="margin-bottom: 18px;">
+            <label for="input-role">Role</label>
+            <select id="input-role">
+              <option value="realtor">Real Estate Professional</option>
+              <option value="developer">Hardware / IoT Developer</option>
+              <option value="enterprise">Enterprise Workflow Automation</option>
+            </select>
+          </div>
+
+          <button type="submit" class="btn btn-royal" style="width: 100%;">Confirm Reservation</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Floating Chatbot Trigger (Yatricare WA-Float Pill Style) -->
+    <div class="wa-float" id="peerbot-wa-trigger" title="Ask Peerbot anything">
+      <div class="wa-avatar">
+        <span class="wa-eye"></span>
+        <span class="wa-eye"></span>
+      </div>
+      <div>
+        <div class="wa-title">Ask Peerbot</div>
+        <div class="wa-sub">Realtor Tour Guide</div>
+      </div>
+    </div>
+
+    <!-- Slide-in Chat Drawer -->
+    <div class="peerbot-chat-drawer" id="peerbot-chat-drawer">
+      <div class="drawer-header">
+        <div class="drawer-title-group">
+          <div class="wa-avatar">
+            <span class="wa-eye"></span>
+            <span class="wa-eye"></span>
+          </div>
+          <div>
+            <div class="drawer-title">Peerbot Assistant</div>
+            <div class="drawer-sub">Instant answers & guided tour</div>
+          </div>
+        </div>
+        <button class="drawer-close" id="peerbot-drawer-close" aria-label="Close chat">&times;</button>
+      </div>
+
+      <div class="chat-quick-chips">
+        <button class="chat-chip" data-question="How does Peerbot help realtors?">Realtor Benefits</button>
+        <button class="chat-chip" data-question="How does the 3D model work?">3D Hardware</button>
+        <button class="chat-chip" data-question="What is Brain vs Limbs architecture?">Brain vs Limbs</button>
+        <button class="chat-chip" data-question="Can you give me a client tour?">🎬 Start Tour</button>
+      </div>
+
+      <div class="drawer-messages" id="peerbot-messages">
+        <div class="bot-msg-row">
+          <div class="bot-avatar-tiny">🤖</div>
+          <div class="bot-msg-bubble">
+            Hello! I am Peerbot's virtual guide. Ask me any technical or workflow questions, or click <b>Start Tour</b> for a walk-through!
+          </div>
+        </div>
+      </div>
+
+      <div class="drawer-input-row">
+        <input
+          type="text"
+          id="peerbot-chat-input"
+          placeholder="Ask a question about Peerbot..."
+          autocomplete="off"
+        />
+        <button class="chat-send-btn" id="peerbot-chat-send" aria-label="Send message">
+          <svg viewBox="0 0 20 20" fill="currentColor">
+            <path d="M3.105 2.289a.75.75 0 00-.826.95l1.414 4.925A1.5 1.5 0 004.835 9.2L11 10l-6.165.8a1.5 1.5 0 00-1.142 1.036l-1.414 4.925a.75.75 0 00.826.95 28.896 28.896 0 0015.293-7.154.75.75 0 000-1.112A28.896 28.896 0 003.105 2.289z" />
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Toast Container -->
+    <div class="toast-container" id="toast-container"></div>
+
+    <script type="module" src="./src/main.js"></script>
+  </body>
+</html>
