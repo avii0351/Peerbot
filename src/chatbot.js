@@ -110,23 +110,25 @@ export class PeerbotChatbot {
   }
 
   initDOM() {
-    // 1. Floating Launcher Button
-    const launcher = document.createElement('div');
-    launcher.className = 'peerbot-chat-launcher';
-    launcher.id = 'peerbot-chat-launcher';
-    launcher.setAttribute('aria-label', 'Open Peerbot Assistant');
-    launcher.innerHTML = `
-      <div class="launcher-avatar">
-        <span class="launcher-eye"></span>
-        <span class="launcher-eye"></span>
-      </div>
-      <div class="launcher-content">
-        <span class="launcher-title">Ask Peerbot</span>
-        <span class="launcher-sub">Client Tour · FAQ</span>
-      </div>
-      <span class="launcher-status-dot"></span>
-    `;
-    document.body.appendChild(launcher);
+    // 1. Floating Launcher Button (Connect to existing Yatricare trigger if available)
+    let launcher = document.getElementById('peerbot-wa-trigger');
+    if (!launcher) {
+      launcher = document.createElement('div');
+      launcher.className = 'wa-float';
+      launcher.id = 'peerbot-wa-trigger';
+      launcher.setAttribute('aria-label', 'Open Peerbot Assistant');
+      launcher.innerHTML = `
+        <div class="wa-avatar">
+          <span class="wa-eye"></span>
+          <span class="wa-eye"></span>
+        </div>
+        <div>
+          <div class="wa-title">Ask Peerbot</div>
+          <div class="wa-sub">Realtor Tour Guide</div>
+        </div>
+      `;
+      document.body.appendChild(launcher);
+    }
 
     // 2. Chat Drawer / Modal Container
     const drawer = document.createElement('div');
@@ -146,12 +148,14 @@ export class PeerbotChatbot {
               <h4 class="chat-title">Peerbot Concierge</h4>
               <span class="chat-badge">Fastpeer AI</span>
             </div>
-            <p class="chat-subtitle">Hardware Guide & Client Tour Assistant</p>
+            <p class="chat-subtitle">Realtor Tour Guide & Hardware Assistant</p>
           </div>
         </div>
         <div class="chat-header-actions">
           <button class="chat-header-btn" id="btn-chat-close" title="Close assistant" aria-label="Close assistant">
-            ✕
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:16px;height:16px;">
+              <path d="M18 6 6 18M6 6l12 12"/>
+            </svg>
           </button>
         </div>
       </div>
@@ -172,15 +176,24 @@ export class PeerbotChatbot {
         <!-- Initial Welcome Message -->
         <div class="chat-msg bot">
           <div class="msg-avatar">
-            <span>●</span>
+            <span class="bot-dot-eye"></span>
           </div>
           <div class="msg-bubble">
             <p><strong>Hello! I am Peerbot's Client Concierge.</strong></p>
-            <p>I can take you or your client on a guided tour through our hardware and workflows, or answer any technical questions about the Seeed ESP32-S3 Sense and Fastpeer ecosystem.</p>
+            <p>I can walk you through our ambient desk hardware, demonstrate hands-free client note taking, or answer questions about contract vision and MLS sync.</p>
             <div class="msg-actions">
-              <button class="chat-action-btn" data-action="start-tour">🚀 Start 4-Step Client Tour</button>
-              <button class="chat-action-btn" data-query="What hardware is inside Peerbot?">🔩 Hardware Specs</button>
-              <button class="chat-action-btn" data-query="Explain the Brain vs Limbs architecture">🧠 Brain vs Limbs</button>
+              <button class="chat-action-btn" data-action="start-tour">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="btn-svg"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                Guided Realtor Tour
+              </button>
+              <button class="chat-action-btn" data-query="How does Peerbot help real estate brokers?">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="btn-svg"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
+                Top Producer Use Cases
+              </button>
+              <button class="chat-action-btn" data-query="How does the desk vision scan escrow contracts?">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="btn-svg"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+                Contract & Escrow Vision
+              </button>
             </div>
           </div>
         </div>
@@ -194,10 +207,10 @@ export class PeerbotChatbot {
 
       <!-- Quick Prompt Suggestions Chips -->
       <div class="chat-suggestions" id="chat-suggestions">
-        <button class="suggestion-chip" data-query="How does Peerbot help real estate brokers?">🏡 Real Estate Use Cases</button>
-        <button class="suggestion-chip" data-query="How is microphone and camera privacy handled?">🔒 Privacy & Security</button>
-        <button class="suggestion-chip" data-query="How does Universal Hardware Connector work?">🔌 WebSocket Connector</button>
-        <button class="suggestion-chip" data-query="How do I reserve a Developer Kit?">📦 DevKit Reservation</button>
+        <button class="suggestion-chip" data-query="How does Peerbot help real estate brokers?">Top Producer Use Cases</button>
+        <button class="suggestion-chip" data-query="How is microphone and camera privacy handled?">Desk Privacy & Security</button>
+        <button class="suggestion-chip" data-query="How does Peerbot handle escrow contracts?">Contract & Escrow Vision</button>
+        <button class="suggestion-chip" data-query="How do I reserve a Developer Kit?">Reserve Developer Kit</button>
       </div>
 
       <!-- Chat Input Area -->
@@ -357,15 +370,15 @@ export class PeerbotChatbot {
         reply = bestMatch.answer;
         // Contextual buttons
         if (lower.includes('hardware') || lower.includes('bom')) {
-          actions.push({ label: '🔍 Jump to 3D Teardown', query: null, action: 'scroll-hardware' });
+          actions.push({ label: 'View 3D Teardown', query: null, action: 'scroll-hardware' });
         }
         if (lower.includes('devkit') || lower.includes('buy') || lower.includes('reserve')) {
-          actions.push({ label: '📝 Reserve DevKit Spot', query: null, action: 'open-modal' });
+          actions.push({ label: 'Reserve DevKit Spot', query: null, action: 'open-modal' });
         }
       } else {
         reply = `**Understood:** *"${text}"*\n\nPeerbot connects physical environments directly to the Fastpeer Master Agent. Every interaction is routed through the Universal Hardware Connector over WebSockets.\n\nWould you like me to guide you through the **4-Stop Client Tour** or inspect specific hardware specs?`;
-        actions.push({ label: '🚀 Start Client Tour', action: 'start-tour' });
-        actions.push({ label: '🔩 Hardware Specs', query: 'What hardware is inside Peerbot?' });
+        actions.push({ label: 'Start Client Tour', action: 'start-tour' });
+        actions.push({ label: 'Hardware Specs', query: 'What hardware is inside Peerbot?' });
       }
 
       this.appendMessage('bot', reply, actions);
@@ -380,7 +393,7 @@ export class PeerbotChatbot {
     this.currentTourStep = 0;
     this.appendMessage(
       'bot',
-      `**Welcome to the Official Peerbot Client Tour!** 🎬\n\nI will walk you through the system in 4 concise stops, highlighting our **modular hardware limb**, **decoupled Fastpeer brain**, **real-estate client workflows**, and **live WebSocket bus**.\n\nLet's head to our first stop!`
+      `**Welcome to the Official Peerbot Client Tour!**\n\nI will walk you through the system in 4 concise stops, highlighting our **desk hardware limb**, **Fastpeer cloud brain**, **real-estate client workflows**, and **live WebSocket bus**.\n\nLet's head to our first stop!`
     );
 
     setTimeout(() => {
@@ -429,11 +442,11 @@ export class PeerbotChatbot {
     } else {
       // Completed
       actions.push({
-        label: '📝 Reserve Developer Kit',
+        label: 'Reserve Developer Kit',
         action: 'open-modal'
       });
       actions.push({
-        label: '🔄 Restart Tour',
+        label: 'Restart Tour',
         action: 'start-tour'
       });
     }
@@ -481,7 +494,9 @@ export class PeerbotChatbot {
 
     msg.innerHTML = `
       <div class="msg-avatar">
-        <span>${sender === 'user' ? '👤' : '●'}</span>
+        ${sender === 'user' 
+          ? '<svg class="msg-avatar-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>' 
+          : '<span class="bot-dot-eye"></span>'}
       </div>
       <div class="msg-bubble">
         <div class="msg-content">${formattedText}</div>

@@ -4,19 +4,20 @@ import { PeerbotChatbot } from './chatbot.js';
 import { SpatialUI } from './spatial.js';
 
 // Workflows data from Architecture Guide PDF
+// Workflows data: Authentic real-estate top producer scenarios
 const WORKFLOWS = {
   1: {
-    title: 'Scenario 1: Taking a Voice Note',
-    targetIcon: '📁',
-    targetName: "Client's File CRM",
-    targetSub: 'MCP Persistent Storage',
+    title: 'Scenario 1: Post-Showing Voice Note & CRM Sync',
+    targetIcon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>',
+    targetName: "Johnson Family CRM File",
+    targetSub: 'Follow Up Boss / Hubspot Sync',
     steps: [
-      { speaker: 'Client speaks', text: '"Take a note about the new property lease terms."' },
-      { speaker: 'Peerbot streams audio', text: 'OV2640 mic streams raw PCM over WebSocket event bus.' },
-      { speaker: 'Fastpeer transcribes + intent', text: 'LLM orchestrator extracts lease terms, date, and tenant ID.' },
-      { speaker: 'Saves note to CRM', text: 'Record written into Fastpeer CRM via Google Drive & database MCP.' },
-      { speaker: 'Fastpeer dispatches TTS payload', text: 'JSON text-to-speech packet dispatched to Peerbot device ID.' },
-      { speaker: 'Peerbot announces out loud', text: '"Note saved to your Fastpeer account." (Eyes smile)' }
+      { speaker: 'Agent dictates at desk or in car', text: '"Take a note for Johnson family: budget $1.4M, needs home office in Maplewood."' },
+      { speaker: 'Peerbot captures speech', text: 'Directional far-field microphone streams audio chunk over encrypted WebSocket.' },
+      { speaker: 'Fastpeer parses client intent', text: 'Fastpeer intelligence extracts contact name, $1.4M budget, and target neighborhood.' },
+      { speaker: 'Auto-syncs to CRM', text: 'Client record updated instantly in brokerage CRM without typing a single key.' },
+      { speaker: 'Returns audio confirmation', text: 'TTS payload returned to device: "Johnson file updated with $1.4M budget."' },
+      { speaker: 'Peerbot confirms aloud', text: '"Johnson file updated with $1.4M budget in Maplewood." (Eyes blink warmly)' }
     ],
     json: {
       event: 'audio_stream_chunk',
@@ -24,68 +25,61 @@ const WORKFLOWS = {
       timestamp: 1729784200,
       payload: {
         intent: 'crm.take_note',
-        transcript: 'Take a note about the new property lease',
-        status: 'transcribed',
-        client_file: 'johnson_lease_v2.pdf'
+        transcript: 'Take a note for Johnson family: budget $1.4M, needs home office in Maplewood',
+        status: 'synced_to_crm',
+        client_file: 'johnson_buyer_profile.json',
+        crm_target: 'FollowUpBoss'
       }
     },
-    finalSpoken: 'Note saved to your Fastpeer account.'
+    finalSpoken: 'Johnson file updated with $1.4M budget in Maplewood.'
   },
   2: {
-    title: 'Scenario 2: Asking for New Nearby Properties',
-    targetIcon: '🏡',
-    targetName: 'Master Agent MLS',
-    targetSub: 'Live Market & CMA Engine',
+    title: 'Scenario 2: Desk Contract Vision & Escrow Verification',
+    targetIcon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><line x1="10" y1="9" x2="8" y2="9"/></svg>',
+    targetName: 'Escrow Transaction Folder',
+    targetSub: 'DocuSign & Drive Sync',
     steps: [
-      { speaker: 'Client asks', text: '"Anything new near this area with 4 bedrooms?"' },
-      { speaker: 'Peerbot streams audio', text: 'Audio streamed with geolocation metadata to Fastpeer.' },
-      { speaker: 'Fastpeer calls Master Agent', text: 'Master Agent queries live MLS feeds and CMA comparative reports.' },
-      { speaker: 'Sends back matches', text: '2 new luxury listings matched within a 3-mile radius.' },
-      { speaker: 'Sends TTS payload', text: 'Structured highlights payload packaged for speaker.' },
-      { speaker: 'Peerbot reads highlights', text: '"Two new listings just hit Maplewood: one at $1.4M with modern pool." (Eyes look up)' }
+      { speaker: 'Agent places addendum on desk', text: '"Peerbot, verify this escrow addendum for required initials."' },
+      { speaker: 'Desk vision scans document', text: 'High-contrast edge scan extracts all 14 signing blocks.' },
+      { speaker: 'Fastpeer legal OCR analysis', text: 'Audits signatures, purchase price clauses, and closing date provisions.' },
+      { speaker: 'Verifies complete execution', text: 'Confirms all 14 initials present and archives verified copy to transaction folder.' },
+      { speaker: 'Sends audio summary payload', text: 'Synthesizes concise audio audit summary for agent.' },
+      { speaker: 'Peerbot speaks audit findings', text: '"Escrow addendum verified. All 14 initials accounted for and filed." (Eyes happy)' }
     ],
     json: {
-      event: 'query_listings',
+      event: 'contract_audit',
       device_id: 'peerbot_desk_01',
-      params: {
-        bedrooms: 4,
-        radius_miles: 3,
-        cma_report_required: true
+      document: 'escrow_addendum_final.pdf',
+      audit: {
+        total_initials_required: 14,
+        initials_verified: 14,
+        status: 'fully_executed'
       },
-      response: {
-        matches_found: 2,
-        top_listing: '742 Maplewood Crest, Austin TX'
-      }
+      archived_to: 'google_drive/transactions/742_maplewood'
     },
-    finalSpoken: 'Two new listings found near this area. The top match is on Maplewood Crest.'
+    finalSpoken: 'Escrow addendum verified. All 14 initials accounted for and filed.'
   },
   3: {
-    title: 'Scenario 3: Autonomous MCP Email & Robotic Arm Loop',
-    targetIcon: '🦾',
-    targetName: 'Physical Robotic Arm',
-    targetSub: 'Vendor Actuator Node',
+    title: 'Scenario 3: Showing Dispatch & Contractor Scheduling',
+    targetIcon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>',
+    targetName: 'Broker Operations Hub',
+    targetSub: 'Staging, Photos & Lockbox Delivery',
     steps: [
-      { speaker: 'Gmail MCP receives email', text: 'Signed purchase offer received from buyer attorney.' },
-      { speaker: 'Fastpeer updates global metadata', text: 'Master agent detects contract signature requirement.' },
-      { speaker: 'Sends JSON action to Robotic Arm', text: '{"command": "move_xyz", "parameters": {"x": 125.0, "tool": "stamp"}}' },
-      { speaker: 'Arm reports completion', text: 'Robotic arm physically stamps and moves the contract folder.' },
-      { speaker: 'Fastpeer sends TTS alert to Peerbot', text: 'Dispatches task completion announcement packet.' },
-      { speaker: 'Peerbot announces out loud', text: '"Signed offer received from Johnson family. Contract stamped and filed." (Eyes celebratory)' }
+      { speaker: 'Agent confirms new listing', text: '"Peerbot, launch 742 Maplewood: book HDR photos and lockbox courier."' },
+      { speaker: 'Peerbot dispatches command', text: 'Packages listing address, preferred shoot window, and access instructions.' },
+      { speaker: 'Fastpeer orchestrates vendors', text: 'Queries preferred photographer calendar and dispatches staging checklist.' },
+      { speaker: 'Dispatches confirmed bookings', text: 'Sends calendar invites to seller, photographer, and courier with lockbox instructions.' },
+      { speaker: 'Sends completion telemetry', text: 'Dispatches task completion announcement packet.' },
+      { speaker: 'Peerbot announces aloud', text: '"Photos booked for Thursday 10 AM. Lockbox courier dispatched." (Eyes celebratory)' }
     ],
     json: {
-      source: 'mcp:gmail',
-      trigger: 'new_offer_received',
-      action_dispatched: {
-        target: 'robotic_arm_01',
-        command: 'move_xyz',
-        parameters: { x: 125.0, y: 45.2, z: 10.0, action: 'stamp_received' }
-      },
-      notification: {
-        target: 'peerbot_desk_01',
-        say: 'Signed offer received from Johnson family. Contract stamped and filed.'
-      }
+      event: 'vendor_dispatch',
+      listing: '742 Maplewood Crest, Austin TX',
+      photographer: { confirmed: true, date: 'Thursday 10:00 AM' },
+      lockbox_courier: { dispatched: true, code: '4821' },
+      calendar_invite_sent: true
     },
-    finalSpoken: 'Signed offer received from Johnson family. Contract stamped and filed.'
+    finalSpoken: 'Photos booked for Thursday 10 AM. Lockbox courier dispatched.'
   }
 };
 
@@ -203,7 +197,7 @@ function initWorkflowSimulator() {
     if (!data) return;
 
     if (titleElem) titleElem.textContent = data.title;
-    if (targetIcon) targetIcon.textContent = data.targetIcon;
+    if (targetIcon) targetIcon.innerHTML = data.targetIcon;
     if (targetName) targetName.textContent = data.targetName;
     if (targetSub) targetSub.textContent = data.targetSub;
 
@@ -244,7 +238,7 @@ function initWorkflowSimulator() {
       if (isRunning) return;
       isRunning = true;
       runBtn.disabled = true;
-      runBtn.textContent = '⏳ Executing Sequence...';
+      runBtn.innerHTML = '<span class="spin-dot"></span> Executing...';
 
       const nodes = [
         document.getElementById('node-client'),
@@ -298,8 +292,8 @@ function initWorkflowSimulator() {
             packets.forEach(p => p.classList.remove('active'));
             isRunning = false;
             runBtn.disabled = false;
-            runBtn.textContent = '▶ Run Animated Sequence';
-            showToast('✅ Workflow sequence completed successfully!');
+            runBtn.innerHTML = 'Run Sequence';
+            showToast('Workflow sequence completed successfully.');
           }, 1200);
         }
       }
@@ -437,7 +431,7 @@ function initModalAndToasts() {
       const name = document.getElementById('input-name').value;
       closeModal();
       SoundFX.playSnap();
-      showToast(`🎉 Thank you ${name}! Your Peerbot DevKit spot is reserved.`);
+      showToast(`Thank you ${name}! Your Peerbot DevKit spot is reserved.`);
       form.reset();
     });
   }
@@ -449,7 +443,7 @@ function showToast(message) {
 
   const toast = document.createElement('div');
   toast.className = 'toast';
-  toast.innerHTML = `<span>✨</span> <span>${message}</span>`;
+  toast.innerHTML = `<span class="toast-ic"><svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg></span> <span>${message}</span>`;
   container.appendChild(toast);
 
   setTimeout(() => {
@@ -508,7 +502,7 @@ function initContactQuoteForm() {
     const nameInput = document.getElementById('contact-name');
     const name = nameInput ? nameInput.value : 'Realtor';
     SoundFX.playSnap();
-    showToast(`🎉 Thank you, ${name}! Your consultation and DevKit reservation has been received.`);
+    showToast(`Thank you, ${name}! Your consultation and DevKit reservation has been received.`);
     quoteForm.reset();
   });
 }
